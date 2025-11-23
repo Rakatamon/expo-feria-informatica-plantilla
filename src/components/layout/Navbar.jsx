@@ -5,7 +5,6 @@ import { NAV_ITEMS } from '../../data/db';
 const Navbar = ({ eventInfo }) => {
     const location = useLocation();
 
-    // Determinar vista activa desde la URL
     const getActiveView = () => {
         const path = location.pathname.replace('/expo-feria-informatica-plantilla', '').replace('/', '') || 'home';
         return path === '' ? 'home' : path;
@@ -18,19 +17,20 @@ const Navbar = ({ eventInfo }) => {
             <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                 <Link
                     to="/"
-                    className="text-xl font-black text-white tracking-tighter cursor-pointer hover:text-cyan-400 transition-colors"
+                    className="flex items-center gap-3 text-xl font-black text-white tracking-tighter cursor-pointer hover:text-cyan-400 transition-colors"
                 >
-                    {eventInfo.titulo}
+                    <img src="/expo-feria-informatica-plantilla/logo-ueea.png" alt="UEEA Logo" className="h-12 w-12 object-contain" />
+                    <span>{eventInfo.titulo}</span>
                 </Link>
 
                 <div className="flex items-center gap-2">
                     {NAV_ITEMS.map(item => (
                         <Link
                             key={item.id}
-                            to={`/${item.id}`}
+                            to={item.id === 'home' ? '/' : `/${item.id}`}
                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${activeView === item.id
-                                    ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/50'
-                                    : 'text-slate-400 hover:text-white hover:bg-slate-800'
+                                ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/50'
+                                : 'text-slate-400 hover:text-white hover:bg-slate-800'
                                 }`}
                         >
                             {item.icon}

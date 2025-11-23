@@ -13,7 +13,7 @@ const HomeView = ({ eventInfo }) => (
 
             <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4 leading-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-                    {eventInfo.titulo}
+                    {eventInfo.subtitulo}
                 </span>
             </h1>
 
@@ -21,45 +21,49 @@ const HomeView = ({ eventInfo }) => (
                 {eventInfo.bienvenida}
             </p>
 
+            {/* Botones de niveles básicos */}
             <div className="flex flex-wrap justify-center gap-4 pt-8">
-                <Link to="/octavo" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                <Link to="/octavo" className="px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-500 hover:from-teal-500 hover:to-emerald-400 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-teal-500/25 flex items-center gap-2">
                     8vo EGB <ChevronRight size={18} />
                 </Link>
-                <Link to="/noveno" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                <Link to="/noveno" className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-500 hover:to-blue-400 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-indigo-500/25 flex items-center gap-2">
                     9no EGB <ChevronRight size={18} />
                 </Link>
-                <Link to="/decimo" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                <Link to="/decimo" className="px-6 py-3 bg-gradient-to-r from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-400 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-rose-500/25 flex items-center gap-2">
                     10mo EGB <ChevronRight size={18} />
                 </Link>
-                <Link to="/robotica" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                <Link to="/robotica" className="px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-slate-600 hover:to-slate-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-slate-500/25 flex items-center gap-2">
                     Club Robótica <ChevronRight size={18} />
                 </Link>
             </div>
+
+            {/* Botones de Bachillerato - destacados */}
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <Link to="/primero" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-blue-500/25 flex items-center gap-2">
+                <Link to="/primero" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-xl shadow-blue-500/30 flex items-center gap-2">
                     Explorar 1ro BGU <ChevronRight size={20} />
                 </Link>
-                <Link to="/segundo" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                <Link to="/segundo" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-500 hover:to-pink-400 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-xl shadow-purple-500/30 flex items-center gap-2">
                     Explorar 2do BGU <ChevronRight size={20} />
                 </Link>
-                <Link to="/tercero" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                <Link to="/tercero" className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-500 hover:to-red-400 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-xl shadow-orange-500/30 flex items-center gap-2">
                     Explorar 3ro BGU <ChevronRight size={20} />
                 </Link>
             </div>
         </div>
 
+        {/* Información del evento */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-12 border-t border-slate-800">
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-                <h3 className="text-cyan-400 font-bold mb-2 text-lg">Fecha</h3>
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/50 transition-colors">
+                <h3 className="text-cyan-400 font-bold mb-2 text-lg">📅 Fecha</h3>
                 <p className="text-slate-300">{eventInfo.fecha}</p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-                <h3 className="text-purple-400 font-bold mb-2 text-lg">Ubicación</h3>
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/50 transition-colors">
+                <h3 className="text-purple-400 font-bold mb-2 text-lg">📍 Ubicación</h3>
                 <p className="text-slate-300">{eventInfo.lugar}</p>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-                <h3 className="text-green-400 font-bold mb-2 text-lg">Entrada</h3>
-                <p className="text-slate-300">Libre para todo público</p>
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-green-500/50 transition-colors">
+                <h3 className="text-green-400 font-bold mb-2 text-lg">🎟️ Entrada</h3>
+                <p className="text-slate-300">Acceso libre para todo el público</p>
             </div>
         </div>
     </div>

@@ -24,12 +24,12 @@ import imgMantenimiento from '../assets/proyectos/Mantenimientoensamblajecomputa
 import imgAudioVisual from '../assets/proyectos/Producción y Postproducción Audio Visual.jpg';
 
 export const INFO_EVENTO = {
-    titulo: "ÁREA DE INFORMÁTICA",
-    subtitulo: "Casa Abierta de Informática y Tecnología",
+    titulo: "UEEA - Área de Informática",
+    subtitulo: "Área de Informática",
     colegio: "Unidad Educativa Ecuatoriana Austriaca",
-    bienvenida: "Bienvenidos al futuro. Explora los proyectos innovadores desarrollados por el Área de Informática.",
-    fecha: "Noviembre Jueves 26 de 2025",
-    lugar: "Patio Central & Laboratorios de escuela"
+    bienvenida: "Descubre el futuro de la tecnología. Explora proyectos innovadores desarrollados por nuestros estudiantes.",
+    fecha: "Jueves 27 de Noviembre de 2025",
+    lugar: "Laboratorios de Computación y Robótica"
 };
 
 export const NAV_ITEMS = [
