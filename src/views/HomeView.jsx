@@ -17,9 +17,16 @@ const HomeView = ({ eventInfo }) => (
                 </span>
             </h1>
 
+            <div className="pt-0.5">
+                <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">
+                    EDUTRIP
+                </h2>
+            </div>
+
             <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light">
                 {eventInfo.bienvenida}
             </p>
+
 
             {/* Botones de niveles básicos */}
             <div className="flex flex-wrap justify-center gap-4 pt-8">
