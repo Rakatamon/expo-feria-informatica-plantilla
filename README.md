@@ -421,18 +421,9 @@ Este proyecto fue desarrollado para fines educativos en el marco de la ExpoTec 2
 
 ## 👨‍💻 Autor
 
-**Área de Informática**  
+**Josue Gomez**  
 Unidad Educativa Ecuatoriana Austriaca  
-Noviembre 2025
-
----
-
-## 🙏 Agradecimientos
-
-- Estudiantes del Área de Informática
-- Profesores y coordinadores
-- Comunidad de React y Vite
-- Diseñadores de iconos de Lucide
+ExpoTec 2025 - Área de Informática
 
 ---
 
@@ -445,3 +436,4 @@ Para consultas sobre el proyecto:
 ---
 
 **⭐ Si te gustó este proyecto, considera darle una estrella en GitHub!**
+

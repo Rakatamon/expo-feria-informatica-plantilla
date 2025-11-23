@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Sparkles } from 'lucide-react';
 
-const HomeView = ({ setView, eventInfo }) => (
+const HomeView = ({ eventInfo }) => (
     <div className="text-center space-y-12 py-10 animate-fadeIn">
         <div className="space-y-6 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
@@ -21,16 +22,31 @@ const HomeView = ({ setView, eventInfo }) => (
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-8">
-                <button onClick={() => setView('octavo')} className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">8vo EGB <ChevronRight size={18} /></button>
-                <button onClick={() => setView('noveno')} className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">9no EGB <ChevronRight size={18} /></button>
-                <button onClick={() => setView('decimo')} className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">10mo EGB <ChevronRight size={18} /></button>
-                <button onClick={() => setView('robotica')} className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">Club Robótica <ChevronRight size={18} /></button>
+                <Link to="/octavo" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                    8vo EGB <ChevronRight size={18} />
+                </Link>
+                <Link to="/noveno" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                    9no EGB <ChevronRight size={18} />
+                </Link>
+                <Link to="/decimo" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                    10mo EGB <ChevronRight size={18} />
+                </Link>
+                <Link to="/robotica" className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                    Club Robótica <ChevronRight size={18} />
+                </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <button onClick={() => setView('primero')} className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-blue-500/25 flex items-center gap-2">Explorar 1ro BGU <ChevronRight size={20} /></button>
-                <button onClick={() => setView('segundo')} className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">Explorar 2do BGU <ChevronRight size={20} /></button>
-                <button onClick={() => setView('tercero')} className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">Explorar 3ro BGU <ChevronRight size={20} /></button>
-            </div>      </div>
+                <Link to="/primero" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-blue-500/25 flex items-center gap-2">
+                    Explorar 1ro BGU <ChevronRight size={20} />
+                </Link>
+                <Link to="/segundo" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                    Explorar 2do BGU <ChevronRight size={20} />
+                </Link>
+                <Link to="/tercero" className="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all hover:scale-105 border border-slate-700 flex items-center gap-2">
+                    Explorar 3ro BGU <ChevronRight size={20} />
+                </Link>
+            </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-12 border-t border-slate-800">
             <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
