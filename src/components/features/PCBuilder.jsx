@@ -6,6 +6,14 @@ const PCBuilder = ({ onClose }) => {
     const [installedParts, setInstalledParts] = useState([]);
     const [lastAction, setLastAction] = useState(null);
     const [showCompletionModal, setShowCompletionModal] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const parts = [
         {
@@ -104,6 +112,42 @@ const PCBuilder = ({ onClose }) => {
 
     const isComplete = parts.length === installedParts.length;
 
+    // Mobile warning screen
+    if (isMobile) {
+        return (
+            <div className="fixed inset-0 z-[200] bg-gradient-to-br from-slate-950 via-slate-900 to-black flex items-center justify-center p-6">
+                <button onClick={onClose} className="absolute top-4 right-4 p-3 bg-red-600/90 hover:bg-red-500 text-white rounded-xl transition-all shadow-lg">
+                    <X size={24} />
+                </button>
+                <div className="max-w-md text-center">
+                    <Monitor size={80} className="mx-auto mb-6 text-cyan-400" />
+                    <h2 className="text-3xl font-bold text-white mb-4">Simulador Para PC</h2>
+                    <p className="text-slate-300 mb-6 text-lg leading-relaxed">
+                        Esta experiencia interactiva está optimizada para pantallas de escritorio.
+                    </p>
+                    <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6">
+                        <h3 className="text-cyan-400 font-semibold mb-4 text-lg">💡 ¿Cómo acceder?</h3>
+                        <ul className="text-left text-slate-300 space-y-3">
+                            <li className="flex items-center gap-2">
+                                <span className="text-green-400 font-bold">✓</span>
+                                Abre este sitio en una computadora
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <span className="text-green-400 font-bold">✓</span>
+                                Usa una tablet en modo horizontal
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <span className="text-green-400 font-bold">✓</span>
+                                Pantalla mínima: 1024px
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    // Desktop simulator
     return (
         <div className="fixed inset-0 z-[200] bg-slate-950 flex flex-col animate-fadeIn">
             <div className="bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center shadow-lg z-30">
